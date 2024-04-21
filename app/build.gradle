@@ -16,6 +16,11 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/INDEX.LIST'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,8 +33,11 @@ android {
     }
 }
 
-dependencies {
 
+dependencies {
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:2.1.0' /*YoutubeExtractor */
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+    implementation 'org.asynchttpclient:async-http-client:3.0.0.Beta3'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.android.material:material:1.4.0'
